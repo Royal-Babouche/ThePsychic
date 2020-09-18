@@ -1,18 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerLife : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Stat _life;
+    [SerializeField] private LifePlayerData _lifeData;
+
+    private void Start()
     {
-        
+        InitialiseLife();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void InitialiseLife()
     {
-        
+        _life = new Stat(_life.ValueMax);
+        _lifeData.life = new Stat(_life.ValueMax);
+    }
+
+    public void AddLife(float value)
+    {
+        _life.AddValue(value);
+    }
+
+    public void LessLife(float value)
+    {
+        _life.LessValue(value);
     }
 }

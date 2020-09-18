@@ -58,4 +58,9 @@ public class Stat
         }
         _coef = _value / _valueMax;
     }
+
+    public float Value { get => _value; set => _value = value; }
+    public float ValueMin { get => _valueMin; set => _valueMin = value; }
+    public float ValueMax { get => _valueMax; set => _valueMax = value; }
+    public float Coef { get => _coef; set => _coef = value; }
 }
